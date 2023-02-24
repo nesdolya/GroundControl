@@ -1,0 +1,438 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../installation/">
+      
+      
+        <link rel="next" href="../job-handler/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.13">
+    
+    
+      
+        <title>Running SchedulerSS - SchedulerSS</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ffa9267a.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#running-schedulerss" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="SchedulerSS" class="md-header__button md-logo" aria-label="SchedulerSS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SchedulerSS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Running SchedulerSS
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="SchedulerSS" class="md-nav__button md-logo" aria-label="SchedulerSS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    SchedulerSS
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Running SchedulerSS
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../job-handler/" class="md-nav__link">
+        Job Scheduling
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/" class="md-nav__link">
+        Web UI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        Troubleshooting
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-modules/" class="md-nav__link">
+        Python API
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contact/" class="md-nav__link">
+        Contact
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../licensing/" class="md-nav__link">
+        Licensing
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="running-schedulerss">Running SchedulerSS</h1>
+<p>SchedulerSS requires a server to be running before any jobs can be scheduled. Only on instance of the server needs to be running. Jobs are managed after the server is running. </p>
+<p>There is no configuration neccesary (See <a href="./#configuration">Configuration</a> for more information).</p>
+<h1 id="server-management">Server Management</h1>
+<p>The <a href="../introduction/#server">server</a> runs using the command prompt (terminal). This window must always stay open. <strong>Closing the terminal, or stopping SchedulerSS using Ctrl+C will stop all scheduled jobs from running.</strong> Jobs scheduled in the future will continue to run as expected once the server has be started again. Jobs that were running when the server stopped will not be completed.</p>
+<h2 id="start-the-server">Start the Server</h2>
+<p>Open a command prompt, activate the virtual environment and start the server with the following command:</p>
+<pre><code>python -m schedulerss.Server_Manager run
+</code></pre>
+<p>Open the web-based user interface using the localhost URL. SchedulerSS defaults to: <a href="http://localhost:8888">http://localhost:8888</a> </p>
+<p>The HTTP_PORT can be updated by using the -p or --port argument.</p>
+<pre><code>python -m schedulerss.Server_Manager run -p 7777
+</code></pre>
+<p>Debugging for NDScheduler is automatically turned off. It can be turned on using the --debug argument if required.</p>
+<pre><code>python -m schedulerss.Server_Manager run -p 7777 --debug
+</code></pre>
+<h2 id="stop-the-server">Stop the Server</h2>
+<p>In the terminal where SchedulerSS server is running type Ctrl+C or close the terminal window.</p>
+<p>Stopping the server may be valuable when performing system updates, stopping a job that is currently running (i.e. force stopping a job), or restarting the server during debugging.</p>
+<h2 id="clear-the-datastore">Clear the Datastore</h2>
+<p>It may be valuable to clear the <a href="../introduction/#datastore">datastore</a> during beta testing, and inialization of SchedulerSS, or if the datastore is growing too large, due to numerous jobs running hourly/daily. If the datastore gets too large it may impact performance of the web-based user interface, such as filtering executions by date range. Clearing the datastore will remove all scheduled jobs from SchedulerSS along with their execution and modification history. Clearing the datastore does not permanently delete these data, instead it is archived to datastorage.</p>
+<p>To clear the datastore <a href="./#stop-the-server">stop the server</a>, then type the following into the terminal:</p>
+<pre><code>python -m schedulerss.Server_Manager clear
+</code></pre>
+<h1 id="job-management">Job Management</h1>
+<p>Once the server is running, basic job scheduling functions can be approached using the customized <a href="../job-handler/">Job Scheduler Functions</a> or through the <a href="tutorial.md">web-based user interface</a>. </p>
+<p>To ensure that a job runs smoothly install any Python libraries that are required by the Python functions to the same virtual environment where ScheulerSS is installed (i.e. the virtual environment used to run the server).</p>
+<p>There are certain job handling functions that can only be used in the web-based user interface (Web UI).</p>
+<table>
+<thead>
+<tr>
+<th align="right">Job Scheduling Function</th>
+<th align="center">Python</th>
+<th align="center">Web UI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">Add Job</td>
+<td align="center">&#10004;</td>
+<td align="center">&#10004;</td>
+</tr>
+<tr>
+<td align="right">Pause Job (Inactive)</td>
+<td align="center">&#10006;</td>
+<td align="center">&#10004;</td>
+</tr>
+<tr>
+<td align="right">Modify Job</td>
+<td align="center">&#10004;</td>
+<td align="center">&#10004;</td>
+</tr>
+<tr>
+<td align="right">Remove Job</td>
+<td align="center">&#10006;</td>
+<td align="center">&#10004;</td>
+</tr>
+</tbody>
+</table>
+<p><em>Note: Remove Job is not part of the basic job scheduling functions, but had been implemented as additional functionality.</em></p>
+<p>Additional functionalities are described in <a href="../python-modules/">Python API Reference</a>. </p>
+<h1 id="configuration">Configuration</h1>
+<p>No configuration is required for SchedulerSS. Instead Server_Manager accepts arguments for HTTP_PORT and DEBUG and automatically sets all required <a href="https://github.com/Nextdoor/ndscheduler/blob/d31016aaca480e38a69d75a66a9978a937c6a0b0/ndscheduler/default_settings.py">NDScheduler settings</a>. </p>
+<p>The HTTP port default is 8888, and the web-based user interface can be accessed using this URL: <a href="http://localhost:8888">http://localhost:8888</a></p>
+<p><strong>Do not change JOB_CLASS_PACKAGES</strong></p>
+<p>Contact Andrea Nesdoly (<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#97;&#110;&#100;&#114;&#101;&#97;&#110;&#101;&#115;&#100;&#111;&#108;&#121;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#97;&#110;&#100;&#114;&#101;&#97;&#110;&#101;&#115;&#100;&#111;&#108;&#121;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a>) for instruction on how to update settings other than HTTP_PORT. </p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.2a6f1dda.min.js"></script>
+      
+    
+  </body>
+</html>

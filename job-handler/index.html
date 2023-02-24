@@ -1,0 +1,715 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../running-schedulerss/">
+      
+      
+        <link rel="next" href="../tutorials/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.13">
+    
+    
+      
+        <title>Job Scheduling - SchedulerSS</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ffa9267a.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#job-handling" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="SchedulerSS" class="md-header__button md-logo" aria-label="SchedulerSS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SchedulerSS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Job Scheduling
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="SchedulerSS" class="md-nav__button md-logo" aria-label="SchedulerSS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    SchedulerSS
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../running-schedulerss/" class="md-nav__link">
+        Running SchedulerSS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Job Scheduling
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Job Scheduling
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cron-time-expressions" class="md-nav__link">
+    Cron time expressions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-a-job" class="md-nav__link">
+    Add a Job
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modify-a-job" class="md-nav__link">
+    Modify a Job
+  </a>
+  
+    <nav class="md-nav" aria-label="Modify a Job">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-the-job-id" class="md-nav__link">
+    Using the Job ID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-job-name" class="md-nav__link">
+    Using the Job Name
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remove-a-job" class="md-nav__link">
+    Remove a Job
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pause-a-job" class="md-nav__link">
+    Pause a Job
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/" class="md-nav__link">
+        Web UI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        Troubleshooting
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-modules/" class="md-nav__link">
+        Python API
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contact/" class="md-nav__link">
+        Contact
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../licensing/" class="md-nav__link">
+        Licensing
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cron-time-expressions" class="md-nav__link">
+    Cron time expressions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-a-job" class="md-nav__link">
+    Add a Job
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modify-a-job" class="md-nav__link">
+    Modify a Job
+  </a>
+  
+    <nav class="md-nav" aria-label="Modify a Job">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-the-job-id" class="md-nav__link">
+    Using the Job ID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-job-name" class="md-nav__link">
+    Using the Job Name
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remove-a-job" class="md-nav__link">
+    Remove a Job
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pause-a-job" class="md-nav__link">
+    Pause a Job
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="job-handling">Job Handling</h1>
+<p>This page describes how to use Python to manage jobs. Check out the <a href="../tutorials/#web-ui">Web UI</a> for additional job handling.</p>
+<p>A SchedulerSS <a href="../introduction/#job">job</a> class is used to run a user defined Python function. This job class requires the following arguments:</p>
+<table>
+<thead>
+<tr>
+<th>Arguments</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Job Name</td>
+<td>The name of the job. It will appear in the web-based user interface. It is NOT a unique identifer.</td>
+</tr>
+<tr>
+<td>Function Path</td>
+<td>The path to the Python script that contains the function to be run. For example: '/path/to/CronMetric_RecEff_func.py'.</td>
+</tr>
+<tr>
+<td>Function Name</td>
+<td>The function to be run. For example: 'CronMetrics_RecEff_exec'.</td>
+</tr>
+<tr>
+<td>Function Arguements</td>
+<td>The argurments that the function being run may require (optional).</td>
+</tr>
+<tr>
+<td>Cron time expression</td>
+<td>The cron expression representing the scheduled time to run the job.</td>
+</tr>
+</tbody>
+</table>
+<p>These parameters need to be JSON serializable, which means they must be strings. It will not work when passing objects, such as a logging object. Modifications to SoundSpace Analytic's functions to accept strings is required. More information on this can be found in <a href="../troubleshooting/#json-serializable">Trouble Shooting</a></p>
+<h3 id="cron-time-expressions">Cron time expressions</h3>
+<p>They can be represented as either a list or as individual parameters. If a list is provided it musth be in this order [minute, hour, month, day, day_of_week]. If individual parameters are provided, any missing will default to '*' .</p>
+<ul>
+<li><a href="https://www.netiq.com/documentation/cloud-manager-2-5/ncm-reference/data/bexyssf.html">Understanding Cron Syntax in the Job Scheduler</a></li>
+<li><a href="https://crontab.guru/">crontab guru</a></li>
+</ul>
+<h2 id="add-a-job">Add a Job</h2>
+<p>Modify the executable Python script for SoundSpace Analytics.</p>
+<p>Import the AddJob function:</p>
+<pre><code>from schedulerss.AddJob import AddJob
+</code></pre>
+<p>Create the job to be added by passing the required variables to AddJob. This example is from CronMetri_RecEff_exec.py</p>
+<pre><code>job_name = 'CronMetric_RecEff_v2'
+mod_path = os.path.join(ProgramDir, 'CronMetric_RecEff_func.py')
+mod_name = 'CronMetrics_RecEff_exec'
+exec_args = log_path+'CronMetrics_RecEff.log'
+cron_time = ['*/1','*','*','*','*']
+
+job_to_add = AddJob(job_name,mod_path,mod_name,exec_args,cron_time=cron_time)
+</code></pre>
+<p>Add the job to the server for scheduled runs using commit()</p>
+<pre><code>job_to_add.commit()
+</code></pre>
+<p>In a single line:</p>
+<pre><code>job_to_add = AddJob(job_name,mod_path,mod_name,exec_args,cron_time=cron_time).commit()
+</code></pre>
+<p>The updated CronMetri_RecEff_exec.py looks like:</p>
+<pre><code>'''
+/* Copyright (C) 2022 SoundSpace Analytics- All Rights Reserved
+* This code is exclusive property of SoundSpace Analytics.  
+* You may not use, distribute or modify this code, except with the
+* explicit permission of the owner. Please contact benhendricks@soundspace-analytics.ca
+* for further questions.
+*/
+'''
+
+# LOAD MODULES
+import numpy as np
+import datetime
+from datetime import timedelta
+import os
+import glob
+import tqdm
+import pandas as pd
+import fnmatch
+import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
+from matplotlib.dates import DateFormatter
+import pytz
+from dateutil import tz
+import imp
+import logging
+
+from schedulerss.AddJob import AddJob
+
+def main():
+    ProgramDir = os.path.abspath(os.path.dirname(__file__))
+
+    CronMetric_RecEff_func = imp.load_source('CronMetric_RecEff_func', os.path.join(ProgramDir, 'CronMetric_RecEff_func.py'))
+    CronMetric_RecEff_config = imp.load_source('CronMetric_RecEff_config', os.path.join(ProgramDir, 'CronMetric_RecEff_config.py'))
+
+
+    # ---- CREATE LOGGING SUBSTRUCTURE
+    log_path = os.path.join(ProgramDir, 'data', 'c-log/')
+    if os.path.exists(log_path):
+        pass
+    else:
+        os.makedirs(log_path)
+    # --- INITIATE DETECTOR LOGGER
+    clog_CronMetrics_RecEff = logging.getLogger(__name__)
+    clog_CronMetrics_RecEff.setLevel(logging.INFO)
+    file_handler = logging.FileHandler(log_path+'CronMetrics_RecEff.log')
+    formatter    = logging.Formatter('%(asctime)s %(message)s',"%Y-%m-%d %H:%M:%S")
+    file_handler.setFormatter(formatter)
+    clog_CronMetrics_RecEff.addHandler(file_handler)
+    clog_CronMetrics_RecEff.propagate = False
+    # ----
+    clog_CronMetrics_RecEff.info(' '+'HYDRA / CRONMETRICS - SPLtimeline now active')
+    clog_CronMetrics_RecEff.info(' '+'version: 2022 -beta')
+    clog_CronMetrics_RecEff.info(' '+'executed from: %s'%ProgramDir)
+    # ----
+    clog_CronMetrics_RecEff.info(' '+'On unit: {}'.format(CronMetric_RecEff_config.hid_val))
+    clog_CronMetrics_RecEff.info(' '+'Monitoring period: {} - {}'.format(CronMetric_RecEff_config.dt_lookback, CronMetric_RecEff_config.dt_forcequit))
+    clog_CronMetrics_RecEff.info(' '+'Exec interval: {}'.format(CronMetric_RecEff_config.interval_val) )
+    clog_CronMetrics_RecEff.info(' '+'RootDir p-log: {}'.format(CronMetric_RecEff_config.RootPath_plog) )
+    clog_CronMetrics_RecEff.info(' '+'Template p-log: {}'.format(CronMetric_RecEff_config.fname_template_plog) )
+    # ----
+
+    # ------------------ SchedulerSS Execution
+    print('Scheduling job...')
+    #Declare job parameters
+    job_name = 'CronMetric_RecEff_v2'
+    mod_path = os.path.join(ProgramDir, 'CronMetric_RecEff_func.py')
+    mod_name = 'CronMetrics_RecEff_exec'
+    exec_args = log_path+'CronMetrics_RecEff.log'
+    cron_time = ['*/1','*','*','*','*']
+
+    addJob = AddJob(job_name,mod_path,mod_name,exec_args,cron_time=cron_time).commit()
+
+
+if __name__ == "__main__":
+    main()
+</code></pre>
+<h2 id="modify-a-job">Modify a Job</h2>
+<p>A job can be modified in two ways: (1) using the job ID, or (2) using the job name. SchedulerSS and NDScheduler do not require job names to be unique. There can be two or more jobs with the same name. It is recommended that the user ensure each job have a unique name, but this is not enforced in NDScheduler. </p>
+<p>It is likely easiest to modify a job using the Web UI, but it can be done in Python.</p>
+<p>Import the UpdateJob fuction</p>
+<pre><code>from schedulerss.UpdateJob import UpdateJob
+</code></pre>
+<h3 id="using-the-job-id">Using the Job ID</h3>
+<p>Job ID can be used to update any of the job parameters including the job name. The job ID can be found easist using the Web UI.</p>
+<p>Create the modified job.  </p>
+<pre><code>#example of job id
+job_ID = '92259991d0d14cc4a3f2b38383f60b70'
+
+job_name = 'CronMetric_NewName' #new name
+mod_path = os.path.join(ProgramDir, 'CronMetric_RecEff_func.py')
+mod_name = 'CronMetrics_RecEff_exec'
+exec_args = log_path+'CronMetrics_RecEff.log'
+cron_time = ['*/1','*','*','*','*']
+
+#be sure to add the job_id to the new job
+job_to_update = UpdateJob(job_name,mod_path,mod_name,exec_args,cron_time=cron_time,job_id=job_ID)
+</code></pre>
+<p>Update the job on the server with commit(new_name=True)</p>
+<pre><code>job_to_update.commit(new_name=True)
+</code></pre>
+<p>In one line:</p>
+<pre><code>job_to_update = UpdateJob(job_name,mod_path,mod_name,exec_args,cron_time=cron_time,job_id=job_ID).commit(new_name=True)
+</code></pre>
+<h3 id="using-the-job-name">Using the Job Name</h3>
+<p>Job ID is not required to update a job using the job name. Becuase job names do not have to be unique this could raise an error if more than one job has the same name.</p>
+<p>Create the modified job</p>
+<pre><code>job_name = 'CronMetric_RecEff_v2' 
+mod_path = os.path.join(ProgramDir, 'CronMetric_RecEff_func.py')
+mod_name = 'CronMetrics_RecEff_exec'
+exec_args = log_path+'RecEff_NewFile.log' #new arguments
+cron_time = ['0','*/1','*','*','*'] #new arguments
+
+job_to_update = UpdateJob(job_name,mod_path,mod_name,exec_args,cron_time=cron_time)
+</code></pre>
+<p>Update the job on the server with commit(), which searches for the job ID using the job name. </p>
+<pre><code>job_to_update.commit()
+</code></pre>
+<p>In one line:</p>
+<pre><code>job_to_update = UpdateJob(job_name,mod_path,mod_name,exec_args,cron_time=cron_time).commit()
+</code></pre>
+<p>If more than one job have the same name it will throw an error.</p>
+<pre><code>FAILED! UpdateJob.update_job(): Job name is not unique (Test3 Job). Use job ID.
+</code></pre>
+<h2 id="remove-a-job">Remove a Job</h2>
+<p>Removing a job using the Python functions requires the job ID, which is easiest found using the Web UI.</p>
+<pre><code>#import JobHandler
+from schedulerss.JobHandler import JobHandler
+
+#example of job id
+job_ID = '92259991d0d14cc4a3f2b38383f60b70'
+
+#create Job Handler object then remove job using id
+handler = JobHandler()
+handler.remove_job(job_ID)
+
+#or in a single line
+JobHandler().remove_job(job_ID)
+</code></pre>
+<h2 id="pause-a-job">Pause a Job</h2>
+<p>This is not implemeted in Python. See the <a href="../tutorials/#pause-a-job">Web UI Pause a Job</a>.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.2a6f1dda.min.js"></script>
+      
+    
+  </body>
+</html>
