@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "SchedulerSS"
+version = "0.1.2"
+description = "SoundScape Analytics job scheduler application based on Next Door ndscheduler"
+authors = ["Andrea Nesdoly <andreanesdoly@gmail.com>,SoundSpace Analytics <benhendricks@soundspace-analytics.ca>"]
+license = "BSD-2-Clause"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">= 3.8,<3.10"
+tinyscript = ">=1.26.21"
+requests = ">=2.28"
+python-dateutil = ">=2.8.2"
+APScheduler = ">=3.0.0"
+tornado = "5.1.1"
+SQLAlchemy = "1.4.41"
+future = "0.18.3"
+ndscheduler_edited = { path = "./schedulerss/dependencies/ndscheduler_edited-0.1.0.tar.gz" }
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

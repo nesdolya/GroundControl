@@ -1,0 +1,11 @@
+# Dependencies to run SchedulerSS
+# Do not change
+tinyscript
+python-dateutil
+APScheduler >= 3.0.0
+tornado==5.1.1
+SQLAlchemy==1.4.41
+future==0.18.3
+requests
+
+
