@@ -14,5 +14,5 @@ nav:
   - Contact: 'contact.md'
   - Licensing: 'licensing.md'
 
-theme: 
-  name: 'material'
+#theme: 
+#  name: 'material'
