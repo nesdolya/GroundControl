@@ -15,4 +15,4 @@ nav:
   - Licensing: 'licensing.md'
 
 theme: 
-  name: 'material'
+  name: 'read the docs'
