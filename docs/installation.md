@@ -13,7 +13,7 @@ This installation includes the customized version of NDSceduler for SoundSpace A
 ## MAC Mini Installation Errors
 
 ### Error: module 'collections' has no attribute 'mutablemapping'
-This error is related to NDScheduler, Tornado 5.1.1 and Python 3.8.10 version requirements. NDScheduler requires an older version of Tornado to work. Tornado 5.1.1 is the most recent version that works with NDScheduler. Tornado 5.1.1 is not compatible with Python 3.10, which was used to create the SSP3 virtual environment on the MAC mini tested. 
+This error is related to NDScheduler, Tornado 5.1.1 and Python >= 3.8.0 and < 3.10 version requirements. NDScheduler requires an older version of Tornado to work. Tornado 5.1.1 is the most recent version that works with NDScheduler. Tornado 5.1.1 is not compatible with Python 3.10, which was used to create the SSP3 virtual environment on the MAC mini tested. 
 
 The current workaround is the use a Python 3.8.10 environment to run SchedulerSS. 
 
