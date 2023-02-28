@@ -7,8 +7,7 @@ Create a virtual environment using Python version >= 3.8.0 and < 3.10 (See [MAC 
 Install SchedulerSS with one of the pip commands below. Anaconda does not handle .tar.gz files. 
 
     python -m pip install SchedulerSS-0.1.2.tar.gz
-
-
+or
     pip install schedulerss-0.1.2.tar.gz
 
 This installation includes the customized version of NDSceduler for SoundSpace Analytics. 
