@@ -1,0 +1,19 @@
+site_name: SchedulerSS
+
+plugins: 
+  - mkdocstrings
+
+nav:
+  - Introduction: 'introduction.md'
+  - Installation: 'installation.md'
+  - Running SchedulerSS: 'running-schedulerss.md'
+  - Job Scheduling: 'job-handler.md'
+  - Web UI: 'tutorials.md'
+  - Troubleshooting: 'troubleshooting.md'
+  - Python API: 'python-modules.md'
+  - Web-Site Modifications: 'aethetics.md'
+  - Contact: 'contact.md'
+  - Licensing: 'licensing.md'
+
+theme: 
+  name: 'material'
