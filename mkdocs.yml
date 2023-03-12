@@ -6,7 +6,7 @@ plugins:
 nav:
   - Introduction: 'introduction.md'
   - Installation: 'installation.md'
-  - Running SchedulerSS: 'running-schedulerss.md'
+  - Running GroundControl: 'running-schedulerss.md'
   - Job Scheduling: 'job-handler.md'
   - Web UI: 'tutorials.md'
   - Troubleshooting: 'troubleshooting.md'
