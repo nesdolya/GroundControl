@@ -19,7 +19,7 @@
     
     
       
-        <title>Troubleshooting - SchedulerSS</title>
+        <title>Troubleshooting - GroundControl</title>
       
     
     
@@ -83,7 +83,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="SchedulerSS" class="md-header__button md-logo" aria-label="SchedulerSS" data-md-component="logo">
+    <a href=".." title="GroundControl" class="md-header__button md-logo" aria-label="GroundControl" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -96,7 +96,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            SchedulerSS
+            GroundControl
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -136,13 +136,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="SchedulerSS" class="md-nav__button md-logo" aria-label="SchedulerSS" data-md-component="logo">
+    <a href=".." title="GroundControl" class="md-nav__button md-logo" aria-label="GroundControl" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
     </a>
-    SchedulerSS
+    GroundControl
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -344,7 +344,7 @@
 <h1 id="modifying-python-function">Modifying Python Function</h1>
 <p>Edits to the SoundSpace Python function can be made without impacting GroundControl as long as there are not changes to the name of the Python script and function, nor the path to the Python script. The updated version of the Python function will be used for the next scheduled run. If there are changes to the function name, location, or required arguments the job will need to be modified before the next scheduled run. (See <a href="../tutorials/#modify-a-job">Web UI Modifying a Job</a>, or <a href="../job-handler/#modify-a-job">Python Modifying a Job</a>)</p>
 <h1 id="force-stopping-a-running-job-python-script">Force Stopping a Running Job (Python Script)</h1>
-<p><a href="running-GroundControl.md#stop-the-server">Stop the server</a> using Ctrl+C or by closing the terminal window to force stop a Python script (i.e. job) from completing its execution. When the server is started again the job will still be scheduled to run in the future, it is recommended to <a href="../tutorials/#pause-a-job">pause the job</a> or <a href="../tutorials/#remove-a-job">remove the job</a> until it is ready to be executed once more.</p>
+<p><a href="../running-groundcontrol/#stop-the-server">Stop the server</a> using Ctrl+C or by closing the terminal window to force stop a Python script (i.e. job) from completing its execution. When the server is started again the job will still be scheduled to run in the future, it is recommended to <a href="../tutorials/#pause-a-job">pause the job</a> or <a href="../tutorials/#remove-a-job">remove the job</a> until it is ready to be executed once more.</p>
 <h1 id="json-serializable">JSON serializable</h1>
 <p>SoundSpace Analytic's functions that were provided for development were passed a Python logging object, but the job scheduler cannot handle passing objects - only strings. Therefore, the functions being executed need to updated to accept strings for the path to the logging file, then re-open the logging file and append to it. The below example is from the CronMetric_RecEff_func.py</p>
 <pre><code>"""Edits By ADN
