@@ -185,7 +185,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../running-schedulerss/" class="md-nav__link">
+      <a href="../running-groundcontrol/" class="md-nav__link">
         Running SchedulerSS
       </a>
     </li>
@@ -270,6 +270,21 @@
   
   
     <li class="md-nav__item">
+      <a href="../aethetics/" class="md-nav__link">
+        Web-Site Modifications
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../contact/" class="md-nav__link">
         Contact
       </a>
@@ -327,9 +342,9 @@
 
 <h1 id="troubleshooting">Troubleshooting</h1>
 <h1 id="modifying-python-function">Modifying Python Function</h1>
-<p>Edits to the SoundSpace Python function can be made without impacting SchedulerSS as long as there are not changes to the name of the Python script and function, nor the path to the Python script. The updated version of the Python function will be used for the next scheduled run. If there are changes to the function name, location, or required arguments the job will need to be modified before the next scheduled run. (See <a href="../tutorials/#modify-a-job">Web UI Modifying a Job</a>, or <a href="../job-handler/#modify-a-job">Python Modifying a Job</a>)</p>
+<p>Edits to the SoundSpace Python function can be made without impacting GroundControl as long as there are not changes to the name of the Python script and function, nor the path to the Python script. The updated version of the Python function will be used for the next scheduled run. If there are changes to the function name, location, or required arguments the job will need to be modified before the next scheduled run. (See <a href="../tutorials/#modify-a-job">Web UI Modifying a Job</a>, or <a href="../job-handler/#modify-a-job">Python Modifying a Job</a>)</p>
 <h1 id="force-stopping-a-running-job-python-script">Force Stopping a Running Job (Python Script)</h1>
-<p><a href="../running-schedulerss/#stop-the-server">Stop the server</a> using Ctrl+C or by closing the terminal window to force stop a Python script (i.e. job) from completing its execution. When the server is started again the job will still be scheduled to run in the future, it is recommended to <a href="../tutorials/#pause-a-job">pause the job</a> or <a href="../tutorials/#remove-a-job">remove the job</a> until it is ready to be executed once more.</p>
+<p><a href="running-GroundControl.md#stop-the-server">Stop the server</a> using Ctrl+C or by closing the terminal window to force stop a Python script (i.e. job) from completing its execution. When the server is started again the job will still be scheduled to run in the future, it is recommended to <a href="../tutorials/#pause-a-job">pause the job</a> or <a href="../tutorials/#remove-a-job">remove the job</a> until it is ready to be executed once more.</p>
 <h1 id="json-serializable">JSON serializable</h1>
 <p>SoundSpace Analytic's functions that were provided for development were passed a Python logging object, but the job scheduler cannot handle passing objects - only strings. Therefore, the functions being executed need to updated to accept strings for the path to the logging file, then re-open the logging file and append to it. The below example is from the CronMetric_RecEff_func.py</p>
 <pre><code>"""Edits By ADN

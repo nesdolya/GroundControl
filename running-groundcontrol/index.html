@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../introduction/">
+        <link rel="prev" href="../installation/">
       
       
-        <link rel="next" href="../running-groundcontrol/">
+        <link rel="next" href="../job-handler/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.13">
     
     
       
-        <title>Installation - SchedulerSS</title>
+        <title>Running SchedulerSS - SchedulerSS</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#installation" class="md-skip">
+        <a href="#running-groundcontrol" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Installation
+              Running SchedulerSS
             
           </span>
         </div>
@@ -168,6 +168,21 @@
 
   
   
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
     
   
   
@@ -179,76 +194,10 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Installation
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
-        Installation
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#mac-mini-installation-errors" class="md-nav__link">
-    MAC Mini Installation Errors
-  </a>
-  
-    <nav class="md-nav" aria-label="MAC Mini Installation Errors">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#error-module-collections-has-no-attribute-mutablemapping" class="md-nav__link">
-    Error: module 'collections' has no attribute 'mutablemapping'
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#importerror-failed-to-find-libmagic" class="md-nav__link">
-    ImportError: Failed to find libmagic
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../running-groundcontrol/" class="md-nav__link">
         Running SchedulerSS
       </a>
+      
     </li>
   
 
@@ -378,41 +327,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#mac-mini-installation-errors" class="md-nav__link">
-    MAC Mini Installation Errors
-  </a>
-  
-    <nav class="md-nav" aria-label="MAC Mini Installation Errors">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#error-module-collections-has-no-attribute-mutablemapping" class="md-nav__link">
-    Error: module 'collections' has no attribute 'mutablemapping'
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#importerror-failed-to-find-libmagic" class="md-nav__link">
-    ImportError: Failed to find libmagic
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -426,28 +340,72 @@
                   
 
 
-<h1 id="installation">Installation</h1>
-<p>Download the latest version of GroundControl as a .tar.gz file.</p>
-<p>Create a virtual environment using Python version &gt;= 3.8.0 and &lt; 3.10 (See <a href="./#mac-mini-installation-errors">MAC Mini Installation Errors</a>). This can be don in Anaconda or through Python virtenv.</p>
-<p>Install GroundControl with one of the pip commands below. Anaconda does not handle .tar.gz files. </p>
-<pre><code>python -m pip install GroundControl-0.1.3.tar.gz
+<h1 id="running-groundcontrol">Running GroundControl</h1>
+<p>GroundControl requires a server to be running before any jobs can be scheduled. Only on instance of the server needs to be running. Jobs are managed after the server is running. </p>
+<p>There is no configuration neccesary (See <a href="running-GroundControl.md#configuration">Configuration</a> for more information).</p>
+<h1 id="server-management">Server Management</h1>
+<p>The <a href="../introduction/#server">server</a> runs using the command prompt (terminal). This window must always stay open. <strong>Closing the terminal, or stopping GroundControl using Ctrl+C will stop all scheduled jobs from running.</strong> Jobs scheduled in the future will continue to run as expected once the server has be started again. Jobs that were running when the server stopped will not be completed.</p>
+<h2 id="start-the-server">Start the Server</h2>
+<p>Open a command prompt, activate the virtual environment and start the server with the following command:</p>
+<pre><code>python -m GroundControl.Server_Manager run
 </code></pre>
-<p>or</p>
-<pre><code>pip install GroundControl-0.1.3.tar.gz
+<p>Open the web-based user interface using the localhost URL. GroundControl defaults to: <a href="http://localhost:8888">http://localhost:8888</a> </p>
+<p>The HTTP_PORT can be updated by using the -p or --port argument.</p>
+<pre><code>python -m GroundControl.Server_Manager run -p 7777
 </code></pre>
-<p>This installation includes the customized version of NDSceduler for SoundSpace Analytics. </p>
-<h2 id="mac-mini-installation-errors">MAC Mini Installation Errors</h2>
-<h3 id="error-module-collections-has-no-attribute-mutablemapping">Error: module 'collections' has no attribute 'mutablemapping'</h3>
-<p>This error is related to NDScheduler, Tornado 5.1.1 and Python 3.8.10 version requirements. NDScheduler requires an older version of Tornado to work. Tornado 5.1.1 is the most recent version that works with NDScheduler. Tornado 5.1.1 is not compatible with Python 3.10, which was used to create the SSP3 virtual environment on the MAC mini tested. </p>
-<p>The current workaround is the use a Python 3.8.10 environment to run GroundControl. </p>
-<h3 id="importerror-failed-to-find-libmagic">ImportError: Failed to find libmagic</h3>
-<p>Uninstall python-magic and possibley python-magic-bin:</p>
-<pre><code>pip uninstall python-magic
-pip uninstall python-magic-bin
+<p>Debugging for NDScheduler is automatically turned off. It can be turned on using the --debug argument if required.</p>
+<pre><code>python -m GroundControl.Server_Manager run -p 7777 --debug
 </code></pre>
-<p>Re-install:</p>
-<pre><code>pip install python-magic-bin==0.4.14
+<h2 id="stop-the-server">Stop the Server</h2>
+<p>In the terminal where GroundControl server is running type Ctrl+C or close the terminal window.</p>
+<p>Stopping the server may be valuable when performing system updates, stopping a job that is currently running (i.e. force stopping a job), or restarting the server during debugging.</p>
+<h2 id="clear-the-datastore">Clear the Datastore</h2>
+<p>It may be valuable to clear the <a href="../introduction/#datastore">datastore</a> during beta testing, and inialization of GroundControl, or if the datastore is growing too large, due to numerous jobs running hourly/daily. If the datastore gets too large it may impact performance of the web-based user interface, such as filtering executions by date range. Clearing the datastore will remove all scheduled jobs from GroundControl along with their execution and modification history. Clearing the datastore does not permanently delete these data, instead it is archived to datastorage.</p>
+<p>To clear the datastore <a href="running-GroundControl.md#stop-the-server">stop the server</a>, then type the following into the terminal:</p>
+<pre><code>python -m GroundControl.Server_Manager clear
 </code></pre>
+<h1 id="job-management">Job Management</h1>
+<p>Once the server is running, basic job scheduling functions can be approached using the customized <a href="../job-handler/">Job Scheduler Functions</a> or through the <a href="tutorial.md">web-based user interface</a>. </p>
+<p>To ensure that a job runs smoothly install any Python libraries that are required by the Python functions to the same virtual environment where GroundControl is installed (i.e. the virtual environment used to run the server).</p>
+<p>There are certain job handling functions that can only be used in the web-based user interface (Web UI).</p>
+<table>
+<thead>
+<tr>
+<th align="right">Job Scheduling Function</th>
+<th align="center">Python</th>
+<th align="center">Web UI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">Add Job</td>
+<td align="center">&#10004;</td>
+<td align="center">&#10004;</td>
+</tr>
+<tr>
+<td align="right">Pause Job (Inactive)</td>
+<td align="center">&#10006;</td>
+<td align="center">&#10004;</td>
+</tr>
+<tr>
+<td align="right">Modify Job</td>
+<td align="center">&#10004;</td>
+<td align="center">&#10004;</td>
+</tr>
+<tr>
+<td align="right">Remove Job</td>
+<td align="center">&#10006;</td>
+<td align="center">&#10004;</td>
+</tr>
+</tbody>
+</table>
+<p><em>Note: Remove Job is not part of the basic job scheduling functions, but had been implemented as additional functionality.</em></p>
+<p>Additional functionalities are described in <a href="../python-modules/">Python API Reference</a>. </p>
+<h1 id="configuration">Configuration</h1>
+<p>No configuration is required for GroundControl. Instead Server_Manager accepts arguments for HTTP_PORT and DEBUG and automatically sets all required <a href="https://github.com/Nextdoor/ndscheduler/blob/d31016aaca480e38a69d75a66a9978a937c6a0b0/ndscheduler/default_settings.py">NDScheduler settings</a>. </p>
+<p>The HTTP port default is 8888, and the web-based user interface can be accessed using this URL: <a href="http://localhost:8888">http://localhost:8888</a></p>
+<p><strong>Do not change JOB_CLASS_PACKAGES</strong></p>
+<p>Contact Andrea Nesdoly (<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#97;&#110;&#100;&#114;&#101;&#97;&#110;&#101;&#115;&#100;&#111;&#108;&#121;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#97;&#110;&#100;&#114;&#101;&#97;&#110;&#101;&#115;&#100;&#111;&#108;&#121;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a>) for instruction on how to update settings other than HTTP_PORT. </p>
 
 
 

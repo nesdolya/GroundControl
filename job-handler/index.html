@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../running-schedulerss/">
+        <link rel="prev" href="../running-groundcontrol/">
       
       
         <link rel="next" href="../tutorials/">
@@ -185,7 +185,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../running-schedulerss/" class="md-nav__link">
+      <a href="../running-groundcontrol/" class="md-nav__link">
         Running SchedulerSS
       </a>
     </li>
@@ -349,6 +349,21 @@
   
   
     <li class="md-nav__item">
+      <a href="../aethetics/" class="md-nav__link">
+        Web-Site Modifications
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../contact/" class="md-nav__link">
         Contact
       </a>
@@ -469,7 +484,7 @@
 
 <h1 id="job-handling">Job Handling</h1>
 <p>This page describes how to use Python to manage jobs. Check out the <a href="../tutorials/#web-ui">Web UI</a> for additional job handling.</p>
-<p>A SchedulerSS <a href="../introduction/#job">job</a> class is used to run a user defined Python function. This job class requires the following arguments:</p>
+<p>A GroundControl <a href="../introduction/#job">job</a> class is used to run a user defined Python function. This job class requires the following arguments:</p>
 <table>
 <thead>
 <tr>
@@ -510,7 +525,7 @@
 <h2 id="add-a-job">Add a Job</h2>
 <p>Modify the executable Python script for SoundSpace Analytics.</p>
 <p>Import the AddJob function:</p>
-<pre><code>from schedulerss.AddJob import AddJob
+<pre><code>from GroundControl.AddJob import AddJob
 </code></pre>
 <p>Create the job to be added by passing the required variables to AddJob. This example is from CronMetri_RecEff_exec.py</p>
 <pre><code>job_name = 'CronMetric_RecEff_v2'
@@ -554,7 +569,7 @@ from dateutil import tz
 import imp
 import logging
 
-from schedulerss.AddJob import AddJob
+from GroundControl.AddJob import AddJob
 
 def main():
     ProgramDir = os.path.abspath(os.path.dirname(__file__))
@@ -589,7 +604,7 @@ def main():
     clog_CronMetrics_RecEff.info(' '+'Template p-log: {}'.format(CronMetric_RecEff_config.fname_template_plog) )
     # ----
 
-    # ------------------ SchedulerSS Execution
+    # ------------------ GroundControl Execution
     print('Scheduling job...')
     #Declare job parameters
     job_name = 'CronMetric_RecEff_v2'
@@ -605,10 +620,10 @@ if __name__ == "__main__":
     main()
 </code></pre>
 <h2 id="modify-a-job">Modify a Job</h2>
-<p>A job can be modified in two ways: (1) using the job ID, or (2) using the job name. SchedulerSS and NDScheduler do not require job names to be unique. There can be two or more jobs with the same name. It is recommended that the user ensure each job have a unique name, but this is not enforced in NDScheduler. </p>
+<p>A job can be modified in two ways: (1) using the job ID, or (2) using the job name. GroundControl and NDScheduler do not require job names to be unique. There can be two or more jobs with the same name. It is recommended that the user ensure each job have a unique name, but this is not enforced in NDScheduler. </p>
 <p>It is likely easiest to modify a job using the Web UI, but it can be done in Python.</p>
 <p>Import the UpdateJob fuction</p>
-<pre><code>from schedulerss.UpdateJob import UpdateJob
+<pre><code>from GroundControl.UpdateJob import UpdateJob
 </code></pre>
 <h3 id="using-the-job-id">Using the Job ID</h3>
 <p>Job ID can be used to update any of the job parameters including the job name. The job ID can be found easist using the Web UI.</p>
@@ -654,7 +669,7 @@ job_to_update = UpdateJob(job_name,mod_path,mod_name,exec_args,cron_time=cron_ti
 <h2 id="remove-a-job">Remove a Job</h2>
 <p>Removing a job using the Python functions requires the job ID, which is easiest found using the Web UI.</p>
 <pre><code>#import JobHandler
-from schedulerss.JobHandler import JobHandler
+from GroundControl.JobHandler import JobHandler
 
 #example of job id
 job_ID = '92259991d0d14cc4a3f2b38383f60b70'

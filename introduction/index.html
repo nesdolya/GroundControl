@@ -258,7 +258,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../running-schedulerss/" class="md-nav__link">
+      <a href="../running-groundcontrol/" class="md-nav__link">
         Running SchedulerSS
       </a>
     </li>
@@ -320,6 +320,21 @@
     <li class="md-nav__item">
       <a href="../python-modules/" class="md-nav__link">
         Python API
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aethetics/" class="md-nav__link">
+        Web-Site Modifications
       </a>
     </li>
   
@@ -438,23 +453,23 @@
 
 
 <h1 id="introduction">Introduction</h1>
-<p><a href="../">SchedulerSS</a> can be broken down into four components: the <a href="./#job">job</a>, the <a href="./#job-handler">job handler</a>, the <a href="./#server">server</a>, and the <a href="./#web-based-user-interface">web-based user interface</a>. </p>
+<p><a href="../">GroundControl</a> can be broken down into four components: the <a href="./#job">job</a>, the <a href="./#job-handler">job handler</a>, the <a href="./#server">server</a>, and the <a href="./#web-based-user-interface">web-based user interface</a>. </p>
 <h2 id="job">Job</h2>
-<p>There is one type of SchedulerSS job, which runs a function within a Python script at the user-defined time, which is based on cron-system time. It was developed with SoundSpace Analytics' current program implementation in mind, which includes three Python scripts: (i) configuration, (ii) functions, and (iii) executable. </p>
-<p>The user-defined time for a scheduled job is accepted as cron expression (e.g. every minute as a cron expression would be '*/1'). SchedulerSS accepts cron expressions for month, day of the week, day, hour, minute. For more information on cron expressions try these links:   </p>
+<p>There is one type of GroundControl job, which runs a function within a Python script at the user-defined time, which is based on cron-system time. It was developed with SoundSpace Analytics' current program implementation in mind, which includes three Python scripts: (i) configuration, (ii) functions, and (iii) executable. </p>
+<p>The user-defined time for a scheduled job is accepted as cron expression (e.g. every minute as a cron expression would be '*/1'). GroundControl accepts cron expressions for month, day of the week, day, hour, minute. For more information on cron expressions try these links:   </p>
 <ul>
 <li><a href="https://www.netiq.com/documentation/cloud-manager-2-5/ncm-reference/data/bexyssf.html">Understanding Cron Syntax in the Job Scheduler</a></li>
 <li><a href="https://crontab.guru/">crontab guru</a></li>
 </ul>
 <h2 id="job-handler">Job Handler</h2>
-<p>SchedulerSS contains a Python library customized for SoundSpace Analytics that encases NDScheduler's job and server manager classes and utilizes REST API to manage the scheduled jobs (e.g. add, remove, or modify jobs). </p>
+<p>GroundControl contains a Python library customized for SoundSpace Analytics that encases NDScheduler's job and server manager classes and utilizes REST API to manage the scheduled jobs (e.g. add, remove, or modify jobs). </p>
 <h2 id="server">Server</h2>
-<p>SchedulerSS requires a Tornado server to be continuously running. Picture it as the job manager that takes in the user commands (e.g. add, update, pause, or delete jobs), runs and records the status of all scheduled jobs(e.g. success, failure, running, and errors), handles all the background processes needed for running and managing these jobs, and gathers and shares this content on web-based user interface. A job cannot run without the server, but the server can run when there are no jobs scheduled. </p>
+<p>GroundControl requires a Tornado server to be continuously running. Picture it as the job manager that takes in the user commands (e.g. add, update, pause, or delete jobs), runs and records the status of all scheduled jobs(e.g. success, failure, running, and errors), handles all the background processes needed for running and managing these jobs, and gathers and shares this content on web-based user interface. A job cannot run without the server, but the server can run when there are no jobs scheduled. </p>
 <h3 id="datastore">Datastore</h3>
-<p>A relational database is requried for the server to run, which stores the information being passed to and from SchedulerSS. This includes information on each job scheduled, its execution history, and modification history. </p>
-<p>The database is stored in the same location as SchedulerSS as <em>database.db</em>. If it is moved, renamed, or deleted, the server and scheduled jobs will fail. </p>
+<p>A relational database is requried for the server to run, which stores the information being passed to and from GroundControl. This includes information on each job scheduled, its execution history, and modification history. </p>
+<p>The database is stored in the same location as GroundControl as <em>database.db</em>. If it is moved, renamed, or deleted, the server and scheduled jobs will fail. </p>
 <h2 id="web-based-user-interface">Web-based User Interface</h2>
-<p>SchedulerSS web-based user interface contains three pages for Jobs, Executions, and Audit logs. Each of these pages is linked to the server's database, allowing the user to display, filter, and manipulate the stored information. </p>
+<p>GroundControl web-based user interface contains three pages for Jobs, Executions, and Audit logs. Each of these pages is linked to the server's database, allowing the user to display, filter, and manipulate the stored information. </p>
 <p>The default web-based user interface is: <a href="http://localhost:8888">http://localhost:8888</a></p>
 
 
