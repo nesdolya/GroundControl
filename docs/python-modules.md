@@ -3,4 +3,8 @@ GroundControl is implemented using extensible classes for flexibilty. These clas
 
 ::: groundcontrol.JobHandler
 
+::: groundcontrol.AddJob
+
+::: groundcontrol.UpdateJob
+
 ::: groundcontrol.JobInfo
