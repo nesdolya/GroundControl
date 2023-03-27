@@ -10,3 +10,8 @@ You can print the list of virtual environments and their location by typing the 
 Open the file explorer and navigate to the virtual environment. Within the site-packages, find the groundcontrol folder, then the statis folder. It will typically be found here: home/USERNAME/anaconda3/envs/ENV_NAME/lib/pythonVERSION/site-packages/groundcontrol/static
 
 Web-page colours, text, and the logo location can be edited within the index.html file within the static folder.
+To change background colours look for the variable:
+
+    style="background-color:..."
+
+For example line 27.
